@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import NextAuth, { AuthOptions, NextAuthOptions } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
@@ -8,16 +8,8 @@ import { cache } from "react";
 import prisma from "@/lib/prismadb";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
-interface User {
-  name?: string | null | undefined;
-  email?: string | null | undefined;
-  image?: string | null | undefined;
-  role?: string;
-}
-
 export const authOptions: NextAuthOptions = {
   session: { strategy: "jwt" },
-  adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID as string,
@@ -61,24 +53,12 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  debug: process.env.NODE_ENV === "development",
-  secret: process.env.NEXTAUTH_SECRET,
-  callbacks: {
-    async jwt({ token, user }) {
-      return { ...token, ...user };
-    },
-    async session({ session, token }) {
-      if (session && token && typeof token.role === "string") {
-        session.user = {
-          ...(session.user ?? {}),
-          role: token.role,
-        } as User; // Ensure session.user is typed as User
-        console.log(session.user);
-      }
-      return session;
-    },
+  adapter: PrismaAdapter(prisma),
+  secret: process.env.NEXTAUTH_SECRET ?? "",
+  pages: {
+    signIn: "/login",
   },
-};
+} satisfies NextAuthOptions;
 
 export const getServerSession = cache(async () => {
   return memoGetServerSession(authOptions);

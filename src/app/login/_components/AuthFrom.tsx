@@ -114,9 +114,9 @@ const AuthForm = () => {
               label="Name"
               register={register}
               placeholder="Display Name"
-              type="name" // Adding type
-              required // Adding required
-              disabled={isLoading} // Example of how you can pass disabled prop
+              type="name"
+              required
+              disabled={isLoading}
             />
           )}
           <FormInput
@@ -125,9 +125,9 @@ const AuthForm = () => {
             label="Email"
             placeholder="abc@gmail.com"
             register={register}
-            type="email" // Adding type
-            required // Adding required
-            disabled={isLoading} // Example of how you can pass disabled prop
+            type="email"
+            required
+            disabled={isLoading}
           />
           <FormInput
             errors={errors}
@@ -135,16 +135,12 @@ const AuthForm = () => {
             label="Passoword"
             placeholder="Enter Your Password"
             register={register}
-            type="password" // Adding type
-            required // Adding required
-            disabled={isLoading} // Example of how you can pass disabled prop
+            type="password"
+            required
+            disabled={isLoading}
           />
           <div>
-            <FormButton
-              type="submit"
-              fullWidth={true} // Example of how you can pass fullWidth prop
-              disabled={isLoading} // Example of how you can pass disabled prop
-            >
+            <FormButton type="submit" fullWidth={true} disabled={isLoading}>
               {variant === "LOGIN" ? "Login" : "Register"}
             </FormButton>
           </div>
@@ -170,14 +166,14 @@ const AuthForm = () => {
           </div>
 
           <div className="mt-6 flex gap-2">
-            {/* <AuthSocialButton
+            <AuthSocialButton
               icon={BsGithub}
               onClick={() => socialAction("github")}
             />
             <AuthSocialButton
               icon={BsGoogle}
               onClick={() => socialAction("google")}
-            /> */}
+            />
           </div>
         </div>
         <div

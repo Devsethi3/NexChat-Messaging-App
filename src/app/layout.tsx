@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import "./globals.css";
-import ToastContext from "@/context/ToastContext";
-import AuthContext from "@/context/AuthContext";
+import AuthProvider from "@/providers/AuthProvider";
 
 const lexend = Lexend({ subsets: ["latin"] });
 
@@ -19,10 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lexend.className}>
-        <AuthContext>
-          <ToastContext />
-          {children}
-        </AuthContext>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
