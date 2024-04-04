@@ -1,10 +1,9 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const session = useSession();
   console.log(session);
 
@@ -22,4 +21,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
