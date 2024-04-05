@@ -7,15 +7,16 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import prisma from "@/lib/prismadb";
 
-const authOptions: AuthOptions = {
+export const authOptions: AuthOptions = {
+  adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
-      clientId: process.env.GITHUB_ID!,
-      clientSecret: process.env.GITHUB_SECRET!,
+      clientId: process.env.GITHUB_ID as string,
+      clientSecret: process.env.GITHUB_SECRET as string,
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
     CredentialsProvider({
       name: "credentials",
@@ -34,7 +35,7 @@ const authOptions: AuthOptions = {
           },
         });
 
-        if (!user || !user.hashedPassword) {
+        if (!user || !user?.hashedPassword) {
           throw new Error("Invalid credentials");
         }
 
@@ -55,8 +56,7 @@ const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET!,
-  adapter: PrismaAdapter(prisma),
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);
