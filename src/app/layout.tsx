@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/providers/AuthProvider";
+import NextTopLoader from "nextjs-toploader";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+import ToasterContext from "@/context/ToasterContext";
 
 const lexend = Lexend({ subsets: ["latin"] });
 
@@ -18,7 +21,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lexend.className}>
-        <AuthProvider>{children}</AuthProvider>
+        <NextTopLoader
+          color="#7C3AED"
+          crawlSpeed={200}
+          height={4}
+          crawl={true}
+          easing="ease"
+        />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ToasterContext />
+          <AuthProvider>{children}</AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

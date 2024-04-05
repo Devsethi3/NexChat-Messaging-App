@@ -55,8 +55,8 @@ const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
   },
-  adapter: PrismaAdapter(prisma),
   secret: process.env.NEXTAUTH_SECRET!,
+  adapter: PrismaAdapter(prisma),
 };
 
 const handler = NextAuth(authOptions);
