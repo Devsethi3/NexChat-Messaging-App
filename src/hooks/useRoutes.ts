@@ -1,4 +1,6 @@
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation"; // Import useRouter hook
+import { useSession } from "next-auth/react"; // Import useSession hook
 import useConversation from "./useConversation";
 import { useMemo } from "react";
 import { HiChat, HiUsers } from "react-icons/hi";
@@ -8,9 +10,17 @@ import { HiArrowLeftOnRectangle } from "react-icons/hi2";
 const useRoutes = () => {
   const pathname = usePathname();
   const { conversationId } = useConversation();
+  const { data: session } = useSession(); // Get the user session
+  const router = useRouter(); // Initialize useRouter hook
 
-  const routes = useMemo(
-    () => [
+  const routes = useMemo(() => {
+    // Check if user is authenticated
+    if (!session) {
+      router.push("/login");
+      return []; // If not authenticated, return an empty array
+    }
+
+    return [
       {
         label: "Chat",
         href: "/conversations",
@@ -26,12 +36,16 @@ const useRoutes = () => {
       {
         label: "Logout",
         href: "#",
-        onClick: () => signOut(),
+        onClick: async () => {
+          // Sign out the user
+          await signOut({ redirect: false });
+          router.push("/"); // Redirect to home after logout
+        },
         icon: HiArrowLeftOnRectangle,
       },
-    ],
-    [pathname, conversationId]
-  );
+    ];
+  }, [pathname, conversationId, session, router]);
+
   return routes;
 };
 
