@@ -133,7 +133,55 @@
 /* =========================== MEDIA QUERRIES =========================== */
 @media screen and (max-width: 768px) {
   .nav-menu {
-    display: none;
+    position: absolute;
+    top: 0;
+    right: 0%;
+    width: 80%;
+    height: 100vh;
+    background: #884dee;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    display: block;
+  }
+  .show-menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-list {
+    padding-top: 7rem;
+    flex-direction: column;
+    font-size: 1.5rem;
+    gap: 4rem;
+    margin-inline: 2rem;
+  }
+  .nav-list li {
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ffffff31;
+  }
+  .theme-toggler {
+    margin: 3.5rem;
+  }
+  .nav-close {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+  }
+  .designer-sidebar {
+    position: absolute;
+    top: 0;
+    right: -60%;
+    width: 200px;
+    /* opacity: 0; */
+    /* pointer-events: none; */
+  }
+}
+@media screen and (max-width: 450px) {
+  .nav-list {
+    font-size: 1.4rem;
   }
 }
 
