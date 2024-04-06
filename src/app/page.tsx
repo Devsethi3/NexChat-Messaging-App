@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect } from "react";
+import Spline from "@splinetool/react-spline";
 
 const HomePage = () => {
   useGSAP(() => {
@@ -40,15 +41,10 @@ const HomePage = () => {
 
       <div className="overflow-hidden z-[100]">
         <div className="h-full">
-          <div className="flex flex-col container items-center justify-center h-[90vh]">
+          <div className="container grid grid-cols-1 lg:grid-cols-2 items-center h-[90vh]">
             <div className="mx-auto text-center">
-              <h1 className="font-semibold text-4xl sm:text-4xl lg:text-7xl">
-                <span className="home-content block">
-                  Chat in Real Time with Friends
-                </span>
-                <span className="block home-content text-primary">
-                  Create Group for group chat
-                </span>
+              <h1 className="font-semibold text-4xl sm:text-4xl lg:text-6xl">
+                Chat in <span className="text-primary">Real Time</span> with Friends
               </h1>
 
               <p className="lg:mx-auto mx-4 home-content lg:text-base my-12 max-w-xl text text-black/80 dark:text-white/80">
@@ -64,6 +60,9 @@ const HomePage = () => {
                   <Button>Get Started</Button>
                 </Link>
               </div>
+            </div>
+            <div className="w-full">
+              <Spline scene="https://prod.spline.design/aJKcxnPQcZbtsO0m/scene.splinecode" />
             </div>
           </div>
         </div>
