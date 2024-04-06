@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect } from "react";
 import Spline from "@splinetool/react-spline";
+import Image from "next/image";
 
 const HomePage = () => {
   useGSAP(() => {
@@ -36,7 +37,7 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
-      <div className="cursor w-32 h-32 opacity-5 bg-white rounded-full absolute z-50 mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+      <div className="cursor hidden lg:block w-32 h-32 opacity-5 bg-white rounded-full absolute z-50 mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
       <div className="overflow-hidden z-[100]">
         <div className="h-full">
           <div className="container grid grid-cols-1 lg:grid-cols-2 items-center h-[90vh]">
@@ -46,7 +47,7 @@ const HomePage = () => {
                 Friends
               </h1>
 
-              <p className="lg:mx-auto mx-4 home-content lg:text-base my-12 max-w-xl text text-black/80 dark:text-white/80">
+              <p className="lg:mx-auto mx-4 home-content lg:text-base my-6 lg:my-12 max-w-xl text text-black/80 dark:text-white/80">
                 Connect with your friends and loved ones instantly with our
                 real-time chat application. Whether you want to catch up, simply
                 stay connected.
@@ -79,37 +80,37 @@ const HomePage = () => {
               </h2>
               <p className="max-w-[600px] text-gray-500 py-5 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                 See the sleek and intuitive interface that makes communication a
-                breeze. Whether you're on desktop or mobile, the chat app keeps
-                you connected.
+                breeze. Whether you&apos;re on desktop or mobile, the chat app
+                keeps you connected.
               </p>
             </div>
             <div className="grid max-w-sm gap-4 items-start mx-auto sm:max-w-3xl sm:grid-cols-2 lg:max-w-4xl lg:gap-8">
-              <img
+              <Image
                 alt="Screenshot"
                 className="aspect-video overflow-hidden rounded-xl object-cover object-center border sm:col-start-2 sm:row-start-1"
                 height="338"
-                src="/placeholder.svg"
+                src="/images/preview-1.png"
                 width="600"
               />
-              <img
+              <Image
                 alt="Screenshot"
                 className="aspect-video overflow-hidden rounded-xl object-cover object-center border sm:col-start-1 sm:row-start-1"
                 height="338"
-                src="/placeholder.svg"
+                src="/images/preview-2.png"
                 width="600"
               />
-              <img
+              <Image
                 alt="Screenshot"
                 className="aspect-video overflow-hidden rounded-xl object-cover object-center border lg:col-start-2 lg:row-start-1"
                 height="338"
-                src="/placeholder.svg"
+                src="/images/preview-1.png"
                 width="600"
               />
-              <img
+              <Image
                 alt="Screenshot"
                 className="aspect-video overflow-hidden rounded-xl object-cover object-center border lg:col-start-1 lg:row-start-1"
                 height="338"
-                src="/placeholder.svg"
+                src="/images/preview-2.png"
                 width="600"
               />
             </div>
