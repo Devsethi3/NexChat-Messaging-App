@@ -12,16 +12,17 @@
   padding-inline: 0.75rem;
 }
 
-.glow {
-  animation: glow-animation 1s infinite alternate;
+.cursor {
+  opacity: 0.02; /* Initial opacity */
+  animation: glow 1.5s ease-in-out infinite alternate; /* Animation for glowing effect */
 }
 
-@keyframes glow-animation {
-  0% {
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.5); /* Initial glow */
   }
-  100% {
-    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.9);
+  to {
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8); /* Stronger glow */
   }
 }
 
