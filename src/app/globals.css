@@ -130,6 +130,13 @@
   }
 }
 
+.shine-asset-1 {
+  filter: blur(100px);
+}
+.shine-asset-2 {
+  background: #6365f146;
+}
+
 /* =========================== MEDIA QUERRIES =========================== */
 @media screen and (max-width: 768px) {
   .nav-menu {

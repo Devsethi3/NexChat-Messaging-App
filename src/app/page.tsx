@@ -39,9 +39,10 @@ const HomePage = () => {
       <Navbar />
       <div className="cursor hidden lg:block w-32 h-32 opacity-5 bg-white rounded-full absolute z-50 mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
       <div className="overflow-hidden z-[100]">
-        <div className="h-full">
+        <div className="h-full relative bg-[url(/images/paper.svg)] dark:bg-[url(/images/paper-dark.svg)]">
           <div className="container grid grid-cols-1 lg:grid-cols-2 items-center h-[90vh]">
             <div className="mx-auto text-center">
+              <div className="absolute w-[500px] h-[500px] bg-primary -z-10 top-0 left-0 opacity-10 shine-asset-1 rounded-full"></div>
               <h1 className="font-semibold home-content text-4xl tracking-tighter sm:text-4xl lg:text-7xl">
                 Chat in <span className="text-primary">Real Time</span> with
                 Friends
@@ -61,7 +62,8 @@ const HomePage = () => {
                 </Link>
               </div>
             </div>
-            <div className="w-full">
+            <div className="w-full relative">
+              <div className="absolute w-[500px] h-[500px] bg-primary -z-10 top-0 right-0 shine-asset-1 rounded-full opacity-20"></div>
               <Spline scene="https://prod.spline.design/aJKcxnPQcZbtsO0m/scene.splinecode" />
             </div>
           </div>
