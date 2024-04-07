@@ -86,33 +86,19 @@ const HomePage = () => {
                 keeps you connected.
               </p>
             </div>
-            <div className="grid max-w-sm gap-4 items-start mx-auto sm:max-w-3xl sm:grid-cols-2 lg:max-w-4xl lg:gap-8">
+            <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">
               <Image
                 alt="Screenshot"
-                className="aspect-video overflow-hidden rounded-xl object-cover object-center border sm:col-start-2 sm:row-start-1"
-                height="338"
-                src="/images/preview-1.png"
-                width="600"
-              />
-              <Image
-                alt="Screenshot"
-                className="aspect-video overflow-hidden rounded-xl object-cover object-center border sm:col-start-1 sm:row-start-1"
-                height="338"
+                className="object-cover rounded-md p-2 bg-secondary"
+                height="600"
                 src="/images/preview-2.png"
                 width="600"
               />
               <Image
                 alt="Screenshot"
-                className="aspect-video overflow-hidden rounded-xl object-cover object-center border lg:col-start-2 lg:row-start-1"
-                height="338"
+                className="object-cover rounded-md p-2 bg-secondary"
+                height="600"
                 src="/images/preview-1.png"
-                width="600"
-              />
-              <Image
-                alt="Screenshot"
-                className="aspect-video overflow-hidden rounded-xl object-cover object-center border lg:col-start-1 lg:row-start-1"
-                height="338"
-                src="/images/preview-2.png"
                 width="600"
               />
             </div>
@@ -165,6 +151,15 @@ const HomePage = () => {
                   </p>
                 </div>
               </div>
+            </div>
+            <div className="h-[60vh] w-full relative">
+              <Image
+                src="/images/preview-2.png"
+                fill
+                className="bg-secondary p-2 rounded-md"
+                objectFit="cover"
+                alt="showcase"
+              />
             </div>
           </div>
         </div>
