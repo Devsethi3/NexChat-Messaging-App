@@ -119,6 +119,56 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <section className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col gap-4 items-center justify-center text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                How it works
+              </h2>
+              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Follow these simple steps to get started with our chat app.
+              </p>
+            </div>
+            <div className="grid gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
+              <div className="flex flex-col gap-2 items-center justify-center">
+                <div className="flex w-12 h-12 items-center justify-center rounded-lg border border-gray-200 bg-gray-50 text-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+                  1
+                </div>
+                <div className="grid gap-2 text-center">
+                  <h3 className="text-lg font-bold">Create an Account</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Sign up for an account on our website or mobile app.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2 items-center justify-center">
+                <div className="flex w-12 h-12 items-center justify-center rounded-lg border border-gray-200 bg-gray-50 text-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+                  2
+                </div>
+                <div className="grid gap-2 text-center">
+                  <h3 className="text-lg font-bold">Add Friends</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Connect with your friends by adding them to your contact
+                    list.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2 items-center justify-center">
+                <div className="flex w-12 h-12 items-center justify-center rounded-lg border border-gray-200 bg-gray-50 text-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50">
+                  3
+                </div>
+                <div className="grid gap-2 text-center">
+                  <h3 className="text-lg font-bold">Start Chatting</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Begin your conversations and enjoy our chat app!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
