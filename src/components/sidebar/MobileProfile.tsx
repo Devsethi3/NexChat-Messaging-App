@@ -24,7 +24,7 @@ const MobileProfile: React.FC<MobileProfileProps> = ({ currentUser }) => {
         <ThemeSwitcher />
         <div
           onClick={() => setIsOpen(true)}
-          className="cursor pointer hover:opacity-75 transition"
+          className="pointer hover:opacity-75 transition"
         >
           <Avatar user={currentUser} />
         </div>
