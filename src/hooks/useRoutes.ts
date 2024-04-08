@@ -10,8 +10,8 @@ import { HiArrowLeftOnRectangle } from "react-icons/hi2";
 const useRoutes = () => {
   const pathname = usePathname();
   const { conversationId } = useConversation();
-  const { data: session } = useSession(); // Get the user session
-  const router = useRouter(); // Initialize useRouter hook
+  const { data: session } = useSession();
+  const router = useRouter();
 
   const routes = useMemo(() => {
     // Check if user is authenticated
