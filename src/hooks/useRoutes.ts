@@ -36,9 +36,8 @@ const useRoutes = () => {
         label: "Logout",
         href: "#",
         onClick: async () => {
-          // Sign out the user
           await signOut({ redirect: false });
-          router.push("/"); // Redirect to home after logout
+          router.push("/");
         },
         icon: HiArrowLeftOnRectangle,
       },
