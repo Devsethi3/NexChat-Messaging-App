@@ -1,6 +1,6 @@
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation"; // Import useRouter hook
-import { useSession } from "next-auth/react"; // Import useSession hook
+import { useSession } from "next-auth/react";
 import useConversation from "./useConversation";
 import { useMemo } from "react";
 import { HiChat, HiUsers } from "react-icons/hi";
