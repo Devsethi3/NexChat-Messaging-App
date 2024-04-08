@@ -16,7 +16,7 @@ const useRoutes = () => {
   const routes = useMemo(() => {
     if (!session) {
       router.push("/login");
-      return []; // If not authenticated, return an empty array
+      return [];
     }
 
     return [
