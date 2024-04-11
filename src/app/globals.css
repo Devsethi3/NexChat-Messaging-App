@@ -13,16 +13,16 @@
 }
 
 .cursor {
-  opacity: 0.02; /* Initial opacity */
-  animation: glow 1.5s ease-in-out infinite alternate; /* Animation for glowing effect */
+  opacity: 0.02;
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.5); /* Initial glow */
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.5);
   }
   to {
-    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8); /* Stronger glow */
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
   }
 }
 
