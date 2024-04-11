@@ -8,12 +8,12 @@ import MessageInput from "./MessageInput";
 import { BiSend } from "react-icons/bi";
 import { CldUploadButton } from "next-cloudinary";
 import { Button } from "@/components/ui/button";
-import { useState } from "react"; // Import useState hook
+import { useState } from "react";
 import { Loader } from "lucide-react";
 
 const Form = () => {
   const { conversationId } = useConversation();
-  const [isLoading, setIsLoading] = useState(false); // Add loading state
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -38,12 +38,12 @@ const Form = () => {
     } catch (error) {
       console.error("Error sending message:", error);
     } finally {
-      setIsLoading(false); // Set loading state to false after message is sent (success or failure)
+      setIsLoading(false);
     }
   };
 
   const handleUpload = async (result: any) => {
-    setIsLoading(true); // Set loading state to true when uploading image
+    setIsLoading(true);
     try {
       // Upload image
       await axios.post("/api/messages", {
@@ -53,7 +53,7 @@ const Form = () => {
     } catch (error) {
       console.error("Error uploading image:", error);
     } finally {
-      setIsLoading(false); // Set loading state to false after image is uploaded (success or failure)
+      setIsLoading(false);
     }
   };
 
