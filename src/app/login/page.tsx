@@ -9,7 +9,7 @@ const LoginPage = () => {
       <Link href="/">
         <Image src="/images/logo.png" width="50" height="50" alt="logo" />
       </Link>
-      <h2 className="text-2xl my-2 text-center font-semibold ">
+      <h2 className="text-2xl my-2 text-center font-semibold">
         Sign in to your account
       </h2>
       <AuthForm />
