@@ -8,9 +8,12 @@ import MessageInput from "./MessageInput";
 import { BiSend } from "react-icons/bi";
 import { CldUploadButton } from "next-cloudinary";
 import { Button } from "@/components/ui/button";
+import { useState } from "react"; // Import useState hook
+import { Loader } from "lucide-react";
 
 const Form = () => {
   const { conversationId } = useConversation();
+  const [isLoading, setIsLoading] = useState(false); // Add loading state
 
   const {
     register,
@@ -23,19 +26,35 @@ const Form = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    setValue("message", "", { shouldValidate: true });
-    axios.post("/api/messages", {
-      ...data,
-      conversationId: conversationId,
-    });
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    setIsLoading(true); // Set loading state to true when form is submitted
+    try {
+      // Submit form data
+      await axios.post("/api/messages", {
+        ...data,
+        conversationId: conversationId,
+      });
+      setValue("message", "", { shouldValidate: true });
+    } catch (error) {
+      console.error("Error sending message:", error);
+    } finally {
+      setIsLoading(false); // Set loading state to false after message is sent (success or failure)
+    }
   };
 
-  const handleUpload = (result: any) => {
-    axios.post("/api/messages", {
-      image: result.info.secure_url,
-      conversationId: conversationId,
-    });
+  const handleUpload = async (result: any) => {
+    setIsLoading(true); // Set loading state to true when uploading image
+    try {
+      // Upload image
+      await axios.post("/api/messages", {
+        image: result.info.secure_url,
+        conversationId: conversationId,
+      });
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    } finally {
+      setIsLoading(false); // Set loading state to false after image is uploaded (success or failure)
+    }
   };
 
   return (
@@ -58,8 +77,17 @@ const Form = () => {
           placeholder="Write a message..."
         />
         <Button type="submit" className="flex items-center gap-2">
-          Send
-          <BiSend />
+          {isLoading ? ( // Display loading indicator if isLoading is true
+            <span className="flex items-center gap-1">
+              Sending...
+              <Loader className="w-5 h-5 text-white animate-spin" />
+            </span>
+          ) : (
+            <span className="flex items-center gap-2">
+              Send
+              <BiSend />
+            </span>
+          )}
         </Button>
       </form>
     </div>
