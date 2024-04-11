@@ -27,7 +27,7 @@ const Form = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    setIsLoading(true); // Set loading state to true when form is submitted
+    setIsLoading(true);
     try {
       // Submit form data
       await axios.post("/api/messages", {
@@ -77,7 +77,7 @@ const Form = () => {
           placeholder="Write a message..."
         />
         <Button type="submit" className="flex items-center gap-2">
-          {isLoading ? ( // Display loading indicator if isLoading is true
+          {isLoading ? (
             <span className="flex items-center gap-1">
               Sending...
               <Loader className="w-5 h-5 text-white animate-spin" />
