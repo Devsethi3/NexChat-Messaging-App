@@ -22,7 +22,7 @@ const useConversation = () => {
       isOpen,
       conversationId,
     }),
-    [isOpen, conversationId] // Include conversationId as a dependency here
+    [isOpen, conversationId]
   );
 };
 
