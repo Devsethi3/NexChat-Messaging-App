@@ -63,7 +63,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">
               <h2 className="text-xl font-semibold leading-7 text-gray-900 dark:text-gray-200">
-                Create a group chat
+                Create A Group Chat
               </h2>
               <p className="text-xs leading-6 text-gray-600">
                 Create a chat with more than 2 people
